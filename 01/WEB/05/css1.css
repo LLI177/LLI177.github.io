@@ -1,0 +1,137 @@
+			body {
+				background-color:aliceblue;
+			}
+			*{
+			 margin: 0 auto;
+			}
+			.tab{
+				border-radius: 10px;
+				border-color:#84b9cb;
+				align:center;
+			}
+			.ah{
+				font-size: 26px;
+				color: #006d77;
+				align:center;
+			}
+			.ah1{
+				width: 110px;
+				height: 30px;
+			}
+			.at{
+				font-size: 22px;
+				color: #006d77;
+				align:center;
+			}
+			.at1{
+				width: 100px;
+				height: 210px;
+				align:center;
+			}
+			.ac{
+				font-size: 22px;
+				color: #006d77;
+				align:center;
+			}
+			.ac1{
+				width: 100px;
+				height: 210px;
+				align:center;
+			}
+			.in{
+				text-align: center;
+				width:150px;
+				height: 25px;
+				background-color: aliceblue;
+				border-radius: 10px;
+				font-size: 18px;
+				color: #006d77;
+				outline-color:#006d77;
+				border-color:#84b9cb;
+				border-style:solid
+			}
+			.btn1{
+				background-color:#84b9cb ;
+				border: none;
+				border-color:#84b9cb;
+				border-style:solid;
+				padding: 6px 9px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 10px;
+			}
+			.btn2{
+				background-color:#84b9cb ;
+				border: none;
+				border-color:#84b9cb;
+				border-style:solid;
+				padding: 5px 25px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 8px;
+			}
+			.btn2:hover{
+				background-color:#006d77 ;
+				border: none;
+				border-color:#006d77;
+				color: aliceblue;
+				border-style:solid;
+				padding: 6px 9px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 10px;
+			}
+			.btn3{
+				background-color:#84b9cb ;
+				border: none;
+				border-color:#84b9cb;
+				border-style:solid;
+				padding: 6px 9px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 8px;
+			}
+			.btn3:hover{
+				background-color:#006d77 ;
+				border: none;
+				border-color:#006d77;
+				color: aliceblue;
+				border-style:solid;
+				padding: 6px 9px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 10px;
+			}
+			.btn1:hover{
+				background-color:#006d77 ;
+				border: none;
+				border-color:#006d77;
+				color: aliceblue;
+				border-style:solid;
+				padding: 6px 9px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 10px;
+			}
+			.tr td {
+			    text-align: center;
+			}
+			.d1{
+				top: 0px;
+				right: 40%;
+				float: right;
+				position: fixed;
+				display: none;
+			}
+			.in1{
+				
+				width:200px;
+				height: 25px;
+				border-radius: 10px;
+				font-size: 18px;
+				color: #006d77;
+				background-color: aliceblue;
+				outline-color:#006d77;
+				border-color:#84b9cb;
+				border-style:solid
+			}

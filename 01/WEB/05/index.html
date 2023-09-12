@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+		<link rel="stylesheet" href="css1.css"/>
+	</head>
+	<body>
+		<div align="center">
+			<h1>
+				<big><a style="color: #006d77;">影视网站后台影视记录管理</a></big>
+			</h1>
+		</div>
+		<div align="center">
+			<table frame="border" cellspacing="0" style="border-radius: 10px;border-color:#84b9cb;align: center;width: 1100px;height: 50px;">
+				<tr class="at">
+					<td>
+						<b>&nbsp;类型分类</b>
+						<select class="in1" style="height: 36px;width: 150px;font-size: 18px;text-align: center;" type="text">
+							<option value="全部">全部</option>
+							<option value="悬疑">悬疑</option>
+							<option value="爱情">爱情</option>
+							<option value="犯罪">犯罪</option>
+							<option value="剧情">剧情</option>
+							<option value="战争">战争</option>
+							<option value="喜剧">戏剧</option>
+						</select></td>
+					<td>
+						<input class="in1" style="height: 36px;width: 270px;font-size: 18px;" type="text" id="search"/>
+					</td>
+					<td>
+						<button class="btn1" style="height: 42px;width: 110px;font-size: 18px;" onclick="document.getElementById('search').value=' 服务升级中，暂不支持该服务'">搜索</button>
+					</td>
+					<td>
+						<a href=""><button class="btn1" style="height: 40px;width: 60px;font-size: 18px;" onclick="">上页</button></a>
+					</td>
+					<td>
+						<a onclick="" style="color: #006d77;">1/2</a>
+					</td>
+					<td>
+						<a href="index6.html"><button class="btn1" style="height: 40px;width: 60px;font-size: 18px;" onclick="">下页</button></a>
+					</td>
+					<td>
+						<input class="in1" style="height: 30px;width: 60px;font-size: 18px;text-align: center;" type="text" id="link2"/>
+					</td>
+					<td>
+						<button class="btn1" style="height: 40px;width: 60px;font-size: 18px;" onclick="link1()">跳转</button>
+					</td>
+					<td>
+						<button class="btn1" style="width: 150px;height: 42px;font-size: 18px;right: 0;" onclick="edit()">+发布作品</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div align="center">
+		<table id="theTable" frame="border" cellspacing="0" style="border-radius: 10px;border-color:#84b9cb;align: center;width: 1100px;">
+			<thead class="ah">
+				<tr>
+					<th style="width: 50px;">
+						<small><small>全选</small></small>
+						<input name="checkAll" type="checkbox" id="check" onchange="selectAll()"/>&nbsp;
+					</th>
+					<th style="width: 150px;">海报</th>
+					<th class="ah1">名称</th>
+					<th class="ah1">导演</th>
+					<th class="ah1">年份</th>
+					<th class="ah1">类型</th>
+					<th class="ah1">地区</th>
+					<th class="ah1">主演</th>
+					<th class="ah1">是否审核</th>
+					<th class="ah1">操作</th>
+				</tr>
+			</thead>
+			<tbody class="at">
+				<tr align="center">
+					<td><input name="user" type="checkbox" value=""/></td>
+					<td style="width: 150px;height: 210px;">
+						<img style="width: 100%;height: 100%;" src="1.jpg"/></td>
+					<td class="at1">猎罪图鉴</td>
+					<td class="at1">邢键钧</td>
+					<td class="at1">2022</td>
+					<td class="at1">悬疑/犯罪</td>
+					<td class="at1">中国大陆</td>
+					<td class="at1">檀健次/金世佳</td>
+					<td class="at1">已审核</td>
+					<td class="at1">
+						<a href="#" class="tablelink"  onclick="edit(this)" style="color: #006d77;">修改</a>
+						<a href="#" class="tablelink" onclick="deleteRow(this)" style="color: #006d77;">删除</a>
+					</td>
+				</tr>
+				<tr align="center">
+					<td><input name="user" type="checkbox" value=""/></td>
+					<td class="" style="width: 150px;height: 210px;">
+						<img style="width: 100%;height: 100%;" class="" src="2.jfif"/></td>
+					<td class="at1">我们有点不对劲</td>
+					<td class="at1">小室直子</td>
+					<td class="at1">2020</td>
+					<td class="at1">悬疑/爱情</td>
+					<td class="at1">日本</td>
+					<td class="at1">滨边美波/横滨流星</td>
+					<td class="at1">已审核</td>
+					<td class="at1">
+						<a href="#" class="tablelink"  onclick="edit(this)" style="color: #006d77;">修改</a>
+						<a href="#" class="tablelink" onclick="deleteRow(this)" style="color: #006d77;">删除</a>
+					</td>
+				</tr>
+				<tr align="center">
+					<td><input name="user" type="checkbox" value=""/></td>
+					<td class="" style="width: 150px;height: 210px;">
+						<img style="width: 100%;height: 100%;" src="3.jfif"/></td>
+					<td class="at1">他人即地狱</td>
+					<td class="at1">李昌熙</td>
+					<td class="at1">2019</td>
+					<td class="at1">悬疑/犯罪</td>
+					<td class="at1">韩国</td>
+					<td class="at1">任时完/李栋旭</td>
+					<td class="at1">已审核</td>
+					<td class="at1">
+						<a href="#" class="tablelink"  onclick="edit(this)" style="color: #006d77;">修改</a>
+						<a href="#" class="tablelink" onclick="deleteRow(this)" style="color: #006d77;">删除</a>
+					</td>
+				</tr>
+				<tr align="center">
+					<td><input name="user" type="checkbox" value=""/></td>
+					<td class="" style="width: 150px;height: 210px;">
+						<img style="width: 100%;height: 100%;" class="" src="4.jfif"/></td>
+					<td class="at1">3年A班</td>
+					<td class="at1">小室直子</td>
+					<td class="at1">2019</td>
+					<td class="at1">悬疑/剧情</td>
+					<td class="at1">日本</td>
+					<td class="at1">菅田将晖</td>
+					<td class="at1">已审核</td>
+					<td class="at1">
+						<a href="#" class="tablelink"  onclick="edit(this)" style="color: #006d77;">修改</a>
+						<a href="#" class="tablelink" onclick="deleteRow(this)" style="color: #006d77;">删除</a>
+					</td>
+				</tr>
+				<tr align="center">
+						<td><input name="user" type="checkbox" value=""/></td>
+						<td class="" style="width: 150px;height: 210px;">
+							<img style="width: 100%;height: 100%;" class="" src="5.jfif"/></td>
+						<td class="at1">请回答1988</td>
+						<td class="at1">李有静</td>
+						<td class="at1">2015</td>
+						<td class="at1">青春/亲情</td>
+						<td class="at1">韩国</td>
+						<td class="at1">李惠利/朴宝剑</td>
+						<td class="at1">已审核</td>
+						<td class="at1">
+							<a href="#" class="tablelink"  onclick="edit(this)" style="color: #006d77;">修改</a>
+							<a href="#" class="tablelink" onclick="deleteRow(this)" style="color: #006d77;">删除</a>
+						</td>
+				</tr>
+			</tbody>
+		</table></div>
+		<div class="foot" style="width:100%;margin: 0 auto;float:center;"><br />
+			<a style="display: block;color: #999;text-align: center;">Copyight © 2022 test5 ZCMU-202112213502020 All Rights Reserved.</a>
+			<a style="display: block;color: #999;text-align: center;">本页面仅供学习交流，严禁用于商业用途，盗版必究</a>
+			<a style="display: block;color: #999;text-align: center;">内容转自网络，如有侵权，请联系删除</a>
+		</div>
+		<br />
+		<div class="d1" id="Edit" style="display: none;top: 5%;">
+		<a style="font-size: 22px;color: #006d77;"><b>编辑:修改/新增</b></a>
+		<table  frame="border" cellspacing="0" style="border-radius: 10px;background-color: aliceblue;border-color:#84b9cb;">
+			<tbody class="at" align="center">
+			<tr style="height: 210px;">
+				<td style="width: 110px;height: 40px;">海报</td>
+				<td><img src="" alt="" id="imgshow" class="dt detialimg" style="width: 150px;height: 210px;"></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td></td>
+				<td>
+					<button style="position: absolute;width: 120px;height: 35px;font-size: 16px;" class="btn2">选择文件</button>
+					<input id="fileImage" onchange="getFile()" style="width: 120px;opacity: 0;" type="file" />
+					<button class="btn3" style="width: 58px;height: 35px;font-size: 16px;" onclick="getFile()">预览</button>
+				</td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>名称</td>
+				<td><input id="name" class="in" type="text" /></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>导演</td>
+				<td><input id="dy" class="in" type="text" /></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>年份</td>
+				<td><input id="time" class="in" type="text" /></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>类型</td>
+				<td><input id="classify" class="in" type="text" /></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>地区</td>
+				<td><input id="dq" class="in" type="text" /></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>主演</td>
+				<td><input id="zj" class="in" type="text" /></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>是否审核</td>
+				<td><input id="sfsh" class="in" type="text" /></td>
+			</tr>
+			<tr style="height: 40px;">
+				<td>操作</td>
+				<td>
+					<button class="btn1" onclick="editrow1()" style="height: 35px;width: 58px;font-size: 16px;">修改</button>
+					<button class="btn1" onclick="insertend()" style="height: 35px;width: 58px;font-size: 16px;">提交</button>
+					<button class="btn1" onclick="cancel()" style="height: 35px;width: 58px;font-size: 16px;">退出</button>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.getElementById("check").onclick = function(){
+		    var checked = document.getElementById("check").checked;
+		    var checkson = document.getElementsByName("user");
+		    if(checked){
+		        for(var i = 0; i < checkson.length ;i++){
+		            checkson[i].checked = true;
+		        }
+		    }else{
+		        for(var i = 0; i < checkson.length ;i++){
+		            checkson[i].checked = false;
+		        }
+		    }
+		}
+		var AddorEdit=0; var editrow=0; var node="<img id='' style='width: 150px;height: 210px;' class='' src=''/>";var check;var picture;
+		function editRow(index){
+			var a2='a'+a1;
+			var x = document.getElementById("theTable").rows[editrow].cells;
+			x[1].innerHTML="<img id='"+a2+"' style='width: 150px;height: 210px;' class='' src=''/>";;
+			document.getElementById(a2).setAttribute("src",b());
+			a1++;
+			console.log("***"+b());
+			x[2].innerHTML=document.getElementById("name").value;
+			x[3].innerHTML=document.getElementById("dy").value;
+			x[4].innerHTML=document.getElementById("time").value ;
+			x[5].innerHTML=document.getElementById("classify").value ;
+			x[6].innerHTML=document.getElementById("dq").value;
+			x[7].innerHTML=document.getElementById("zj").value ;
+			x[8].innerHTML=document.getElementById("sfsh").value ;
+		}
+		function editrow1(){
+			var index = editrow;//document.write(editrow);
+			var edit = document.getElementById("Edit")
+			    edit.style.display = "block";
+			if(confirm("是否确认修改")) editRow(index);
+		}
+		function cancel()
+		{
+		    var edit = document.getElementById("Edit")
+		    edit.style.display = "none";
+		}
+		var k;
+		function getFile(){
+			var file = document.getElementById('fileImage').files[0];
+			console.log(file)
+			if (window.FileReader) {    
+			    var reader = new FileReader();    
+			    reader.readAsDataURL(file);      
+			    reader.onloadend = function (e){
+				k=e.target.result;};    
+			   }
+			var detialimg = document.querySelector('.detialimg');
+		    detialimg.src = k;
+		}
+		function edit(obj) {
+			var edit = document.getElementById("Edit")
+			    edit.style.display = "block";
+		    var row = obj.parentNode.parentNode.rowIndex;editrow = row;
+			if(row)
+			{
+				var son1 = obj.parentNode.parentNode.children;
+				var a = son1[1].firstElementChild;
+				console.log(a.src);
+				var detialimg = document.querySelector('.detialimg');
+				detialimg.src = son1[1].firstElementChild.src;
+			}
+		    var x = document.getElementById("theTable").rows[row].cells;
+		    document.getElementById("name").value = x[2].innerHTML;
+			document.getElementById("dy").value = x[3].innerHTML;
+			document.getElementById("time").value = x[4].innerHTML;
+		    document.getElementById("classify").value = x[5].innerHTML;
+			document.getElementById("dq").value = x[6].innerHTML;
+			document.getElementById("zj").value = x[7].innerHTML;
+			document.getElementById("sfsh").value = x[8].innerHTML;
+		}
+		var AddorEdit=0; var editrow=1;var check;var node;var a1=1;
+		function appendRow(index) {
+		    var theTable = document.getElementById("theTable");theTable.className="tr";
+		    var row = theTable.insertRow(index);
+			var check = row.insertCell(0);
+		    var picture = row.insertCell(1);
+		    var name = row.insertCell(2);
+			var dy = row.insertCell(3);
+			var time = row.insertCell(4);
+		    var classify = row.insertCell(5);
+			var dq = row.insertCell(6);
+			var zj = row.insertCell(7);
+			var sfsh = row.insertCell(8);
+		    var otherEdit = row.insertCell(9);
+			//document.write("<tr align='center'>")
+			
+			check.innerHTML = "<input name='user' type='checkbox' value=''/>";
+			
+			var a2='a'+a1;
+			picture.innerHTML = "<img id='"+a2+"' style='width: 150px;height: 210px;' class='' src=''/>";
+			document.getElementById(a2).setAttribute("src",b());
+			a1++;
+			console.log("***"+b());
+			
+			name.innerHTML = document.getElementById("name").value;
+			dy.innerHTML = document.getElementById("dy").value;
+			time.innerHTML = document.getElementById("time").value;
+		    classify.innerHTML = document.getElementById("classify").value;
+			dq.innerHTML = document.getElementById("dq").value;
+			zj.innerHTML = document.getElementById("zj").value;
+			sfsh.innerHTML = document.getElementById("sfsh").value;
+		    otherEdit.innerHTML = "<a href='#' class='tablelink'  onclick='edit(this)' style='color: #006d77;'>修改 </a><a href='#' class='tablelink' onclick='deleteRow(this)' style='color: #006d77;'>删除</a>"
+		}
+		function insertend(){
+			var index=theTable.rows.length;
+			if(confirm("默认在表尾添加一行，是否确认")) appendRow(index);
+		}
+		function deleteRow(obj) {
+		    var text = window.confirm("是否确定删除吗？");
+		    if (text == true) {
+		        var row = obj.parentNode.parentNode.rowIndex;
+		        var theTable = document.getElementById("theTable");
+		        theTable.deleteRow(row);
+		    } else {
+		        return false;
+		    }
+		}
+		function link1(){
+			var k=document.getElementById("link2").value;
+			if(k==1){
+				location.href="index.html";
+			}
+			else if(k==2){
+				location.href="index6.html";
+			}
+			else{
+				alert("请正确输入页数");
+			}
+		}
+		function b()
+		{
+			return k;
+		}
+	</script>
+</html>

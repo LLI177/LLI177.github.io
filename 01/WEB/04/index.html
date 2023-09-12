@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				text-align: center;
+				background-color:aliceblue;
+			}
+			*{
+			 margin: 0 auto;
+			}
+		</style>
+		<script src="https://files.cnblogs.com/files/quaint/sakuraPlus.js"></script>
+		<script type="text/javascript">
+			var a={
+				kcs:["0","0","105","555","1005","2755","5505","13505"],
+				tax:["0","0.03","0.10","0.20","0.25","0.30","0.35","0.45"],
+				fn:function(num)
+				{
+					if(num<=1500) return 1;
+					else if(num>1500&&num<=4500) return 2;
+					else if(num>4500&&num<=9000) return 3;
+					else if(num>9000&&num<=35000) return 4;
+					else if(num>35000&&num<=55000) return 5;
+					else if(num>55000&&num<=80000) return 6;
+					else return 7;
+				}
+			}
+			var b=new Array();
+			b[0]="3500";b[1]="7000";b[2]="10000";b[3]="15000";b[4]="50000";b[5]="80000";b[6]="100000";
+			function tax1(num1){
+				if(num1<3500) return 0;
+				num1=num1-3500;
+				return num1*a.tax[a.fn(num1)]-a.kcs[a.fn(num1)];
+			}
+			function tax2(a1,b1){
+				if(b1>3500) return a1*a.tax[a.fn(a1/12)]-a.kcs[a.fn(a1/12)];
+				else return (a1-(3500-b1))*a.tax[a.fn((a1-(3500-b1))/12)]-a.kcs[a.fn((a1-(3500-b1))/12)];
+			}
+			function randomNum(minNum,maxNum){ 
+			    switch(arguments.length){ 
+			        case 1: 
+			            return parseInt(Math.random()*minNum+1,10); 
+			        break; 
+			        case 2: 
+			            return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10); 
+			        break; 
+			            default: 
+			                return 0; 
+			            break; 
+			    } 
+			}//bgcolor='white'
+			function cala100(){
+				document.write("<table frame='border' cellspacing='0'  style='border-radius: 10px;border-color:#84b9cb;'>")
+				document.write("<tr>")
+				document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'><b>月工资</b></a></td>")
+				document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'><b>每月所得税</b></a></td>")
+				document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'><b>年终奖</b></a></td>")
+				document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'><b>一次性所得税</b></a></td>")
+				document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'><b>全年所得税共计</b></a></td>")
+				document.write("</tr>")
+				for(var i=0;i<=6;i++){
+					var c=randomNum(3,20);
+					var p=c*b[i];
+					document.write("<tr>")
+					document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'>"+b[i]+"</a></td>")
+					document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'>"+tax1(b[i])+"</a></td>")
+					document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'>"+p+"</a></td>")
+					document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'>"+tax2(p,b[i])+"</a></td>")
+					document.write("<td width='150px' height='50px' align='center'><a style='font-size: 18px;color: #006d77;'>"+(tax1(b[i])*12+tax2(p,b[i]))+"</a></td>")
+					document.write("</tr>")
+				}
+				document.write("</table>")
+			}
+			/*var num=prompt();
+			document.write(tax1(num));
+			var a1=prompt();var b1=prompt()<div align="center" style="background-color: #f2f2ff;width: 100%;height:5000px;top: 0px;">;
+			document.write(tax2(a1,b1));				margin: 4px 2px;cursor: pointer;text-decoration: none;display: inline-block;*/
+		</script>
+		<style type="text/css">
+			.btn1{
+				background-color:#84b9cb ;
+				border: none;
+				border-color:#84b9cb;
+				border-style:solid;
+				padding: 6px 9px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 8px;
+			}
+			.btn1:hover{
+				background-color:#006d77 ;
+				border: none;
+				border-color:#006d77;
+				color: aliceblue;
+				border-style:solid;
+				padding: 6px 9px;
+				text-align: center;
+				border-radius: 10px;
+				font-size: 8px;
+			}
+			
+		</style>
+	<body>
+		<div align="center">
+			<br />
+			<h1>
+				<big><a style="color: #006d77;">2012版月工资、年终奖个人所得税计算</a></big>
+			</h1>
+			<br />
+			<table frame="border" cellspacing="0" style="border-radius: 10px;border-color:#84b9cb;">
+				<tr><a style="font-size: 22px;color: #006d77;"><b>月工资个人所得税计算</b></a></tr>
+				<tr>
+					<td align="center" width="100px" height="40px">
+						<a style="font-size: 18px;color: #006d77;">请输入月工资:</a></td>
+					<td align="center" width="100px" height="40px">
+						<input style="background-color: aliceblue;text-align: center;width:150px;height: 25px;border-radius: 10px;font-size: 18px;color: #006d77;outline-color:#006d77;border-color:#84b9cb;border-style:solid" type="text" id="ygz"/>
+						</td>
+					<td align="center" width="50px" height="40px">
+						<button class="btn1" onclick="document.getElementById('ygz1').value=tax1(document.getElementById('ygz').value)">提交</button></td>
+				</tr>
+				<tr>
+					<td align="center" width="150px" height="40px">
+						<a style="font-size: 18px;color: #006d77;">每月所得税:</a></td>
+					<td align="center" width="150px" height="40px">
+						<input style="background-color: #f6f9fa;text-align: center;width:150px;height: 25px;border-radius: 10px;font-size: 18px;color: #006d77;outline-color:#006d77;border-color:#84b9cb;border-style:solid" type="text" id="ygz1"  disabled="disabled"/></td>
+				</tr>
+			</table>
+			<br />
+			<table frame="border" cellspacing="0" style="border-radius: 10px;border-color:#84b9cb;">
+				<tr><a style="font-size: 22px;color: #006d77;"><b>年终奖个人所得税计算</b></a></tr>
+				<tr>
+					<td align="center" width="100px" height="40px">
+						<a style="font-size: 18px;color: #006d77;">请输入年终奖:</a></td>
+					<td align="center" width="100px" height="40px">
+						<input style="background-color: aliceblue;text-align: center;width:150px;height: 25px;border-radius: 10px;font-size: 18px;color: #006d77;outline-color:#006d77;border-color:#84b9cb;border-style:solid" type="text" id="nzj"/></td>
+				</tr>
+				<tr>
+					<td align="center" width="150px" height="40px">
+						<a style="font-size: 18px;color: #006d77;">请输入当月工资:</a></td>
+					<td align="center" width="150px" height="40px">
+						<input style="background-color: aliceblue;text-align: center;width:150px;height: 25px;border-radius: 10px;font-size: 18px;color: #006d77;outline-color:#006d77;border-color:#84b9cb;border-style:solid" type="text" id="nzj1"/></td>
+					<td align="center" width="50px" height="40px">
+						<button class="btn1" onclick="document.getElementById('nzj2').value=tax2(document.getElementById('nzj').value,document.getElementById('nzj1').value)">提交</button></td>
+				</tr>
+				<tr>
+					<td align="center" width="150px" height="40px">
+						<a style="font-size: 18px;color: #006d77;">一次性所得税:</a></td>
+					<td align="center" width="150px" height="40px">
+						<input style="background-color: #f6f9fa;text-align: center;width:150px;height: 25px;border-radius: 10px;font-size: 18px;color: #006d77;outline-color:#006d77;border-color:#84b9cb;border-style:solid" type="text" id="nzj2"  disabled="disabled"/></td>
+				</tr>
+			</table>
+			<div>
+				<br /><br />
+				<a style="font-size: 22px;color: #006d77;"><b>随机年终奖</b></a>
+				<a style="font-size: 22px;color: #006d77;"><b>(</b></a>
+				<a style="font-size: 22px;color: #006d77;" href="" rel="nofollow"><b>点击刷新</b></a>
+				<a style="font-size: 22px;color: #006d77;"><b>)</b></a>
+				<br />
+				<script>
+					cala100()
+				</script>
+			</div>
+	</body>
+	<script src="https://files.cnblogs.com/files/quaint/sakuraPlus.js"></script>
+</html>
