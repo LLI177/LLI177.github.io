@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Chap2 Demo</title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec3 vPosition;
+	attribute vec3 vColor;
+	varying vec4 color;
+
+	void main(){
+		gl_Position = vec4( vPosition, 1.0 );
+		color = vec4( vColor, 1.0 );
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	varying vec4 color;
+	void main(){
+		gl_FragColor = color;
+	}
+	</script>
+
+    <script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../js/common/initShaders.js"></script>
+    <script type="text/javascript" src="../js/common/gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="../js/ch02/gasket-3d.js"></script>
+	<style type="text/css">
+		body {
+						background-color:aliceblue;
+					}
+		*{
+			margin: 0 auto;
+		}
+		.in1{
+						
+						width:200px;
+						height: 25px;
+						border-radius: 10px;
+						font-size: 18px;
+						color: #006d77;
+						background-color: aliceblue;
+						outline-color:#006d77;
+						border-color:#84b9cb;
+						border-style:solid
+					}
+		.btn1{
+						background-color:#84b9cb ;
+						border: none;
+						border-color:#84b9cb;
+						border-style:solid;
+						padding: 6px 9px;
+						text-align: center;
+						border-radius: 10px;
+						font-size: 10px;
+					}
+		.btn1:hover{
+						background-color:#006d77 ;
+						border: none;
+						border-color:#006d77;
+						color: aliceblue;
+						border-style:solid;
+						padding: 6px 9px;
+						text-align: center;
+						border-radius: 10px;
+						font-size: 10px;
+					}
+	</style>
+</head>
+
+<body onload="init()">
+    <div align="center">
+    	<br />
+    	<h1>
+    		<big><a style="color: #006d77;">Sierpinski Gasket in 3D</a></big>
+    	</h1>
+    </div><br /><br />
+    <div align="center">
+    	<a style="font-size: 22px;color: #006d77;"><b>请输入分割次数：</b></a>
+    	
+        <input class="in1" type="text" id="number" name="number"size="25" style="text-align: center;width:150px;height: 30px;font-size: 18px;"/>
+    	<input class="btn1" type="button" value="确定" onclick="draw()"size="25" style="height: 35px;"/>	
+    	
+    </div>
+    <div align="center">
+    	<br /><canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+    </div>
+</body>
+
+</html>
